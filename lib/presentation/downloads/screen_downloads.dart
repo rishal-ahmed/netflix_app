@@ -72,7 +72,7 @@ class Section2 extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        kHeigh,
+        kHeight,
         const Text(
           "We'll download a personalised selection of\n movies and shows for you, So there's\n always something to watch on your\n device.",
           textAlign: TextAlign.center,
@@ -81,7 +81,7 @@ class Section2 extends StatelessWidget {
             fontSize: 14,
           ),
         ),
-        kHeigh,
+        kHeight,
         SizedBox(
           width: screenSize.width,
           height: screenSize.width,
@@ -143,7 +143,7 @@ class Section3 extends StatelessWidget {
           ),
           color: kButtonColor,
         ),
-        kHeigh,
+        kHeight,
         MaterialButton(
           onPressed: () {},
           padding: const EdgeInsets.all(10),

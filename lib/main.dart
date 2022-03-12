@@ -14,13 +14,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Netflix',
       theme: ThemeData(
-          scaffoldBackgroundColor: backgroundColor,
-          backgroundColor: Colors.black,
-          primarySwatch: Colors.blue,
-          textTheme: const TextTheme(
-            bodyText1: TextStyle(color: Colors.white),
-            bodyText2: TextStyle(color: Colors.white),
-          )),
+        // fontFamily: GoogleFonts.montserrat().fontFamily,
+        scaffoldBackgroundColor: backgroundColor,
+        backgroundColor: Colors.black,
+        primarySwatch: Colors.blue,
+        textTheme: const TextTheme(
+          bodyText1: TextStyle(color: Colors.white),
+          bodyText2: TextStyle(color: Colors.white),
+        ),
+      ),
       home: ScreenMainPage(),
     );
   }
