@@ -62,17 +62,18 @@ class VideoListItem extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           vertical: _screenSize.width * 0.03),
                       child: CircleAvatar(
-                        radius: _screenSize.width * 0.08,
+                        radius: _screenSize.width * 0.07,
                         backgroundColor: Colors.black,
                         backgroundImage: NetworkImage(listPage[index]),
                       ),
                     ),
                     const VideoActionsWidget(
-                        title: 'LOL', icon: Icons.emoji_emotions),
-                    const VideoActionsWidget(title: 'My List', icon: Icons.add),
+                        title: 'LOL', icon: Icons.emoji_emotions_outlined),
+                    const VideoActionsWidget(
+                        title: 'My List', icon: Icons.add_outlined),
                     const VideoActionsWidget(title: 'Share', icon: Icons.share),
                     const VideoActionsWidget(
-                        title: 'Play', icon: Icons.play_arrow),
+                        title: 'Play', icon: Icons.play_arrow)
                   ],
                 )
               ],
