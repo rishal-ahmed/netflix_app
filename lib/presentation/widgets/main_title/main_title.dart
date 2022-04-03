@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SearchTitle extends StatelessWidget {
-  const SearchTitle({
+class MainTitle extends StatelessWidget {
+  const MainTitle({
     required this.title,
     Key? key,
   }) : super(key: key);
