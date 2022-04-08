@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants.dart';
+import '../../../core/constants/constants.dart';
 import '../main_card/main_card_widget.dart';
 import '../main_title/main_title.dart';
 
@@ -20,7 +20,7 @@ class MainTitleCardWidget extends StatelessWidget {
         MainTitle(title: title),
         kHeight5,
         LimitedBox(
-          maxHeight: MediaQuery.of(context).size.width / 2.5,
+          maxHeight: MediaQuery.of(context).size.width / 2.25,
           child: ListView(
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,

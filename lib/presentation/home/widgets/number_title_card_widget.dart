@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/core/constants.dart';
+import 'package:netflix_app/core/constants/constants.dart';
 
 import '../../widgets/main_title/main_title.dart';
 import 'number_card_widget.dart';
@@ -18,7 +18,7 @@ class NumberTitleCardWidget extends StatelessWidget {
         const MainTitle(title: 'Top 10 Tv Shows In India Today'),
         kHeight5,
         LimitedBox(
-          maxHeight: MediaQuery.of(context).size.width / 2.5,
+          maxHeight: MediaQuery.of(context).size.width / 2.25,
           child: ListView(
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,

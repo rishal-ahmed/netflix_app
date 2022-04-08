@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/core/constants.dart';
+import 'package:netflix_app/core/constants/constants.dart';
 
 class MainCardWidget extends StatelessWidget {
   const MainCardWidget({
@@ -16,7 +16,7 @@ class MainCardWidget extends StatelessWidget {
     return Container(
       margin: kHPadding5,
       width: _screensize.width / 3.25,
-      height: _screensize.width / 2.5,
+      height: _screensize.width / 2.25,
       decoration: BoxDecoration(
           borderRadius: kRadius5,
           image: DecorationImage(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/core/colors/colors.dart';
-import 'package:netflix_app/core/constants.dart';
+import 'package:netflix_app/core/constants/colors/colors.dart';
+import 'package:netflix_app/core/constants/constants.dart';
 import 'package:netflix_app/presentation/widgets/main_title/main_title.dart';
 
 const imageUrl =

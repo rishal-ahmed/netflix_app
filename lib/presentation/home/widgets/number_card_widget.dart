@@ -1,7 +1,7 @@
 import 'package:bordered_text/bordered_text.dart';
 import 'package:flutter/material.dart';
-import 'package:netflix_app/core/colors/colors.dart';
-import 'package:netflix_app/core/constants.dart';
+import 'package:netflix_app/core/constants/colors/colors.dart';
+import 'package:netflix_app/core/constants/constants.dart';
 
 class NumberCardWidget extends StatelessWidget {
   const NumberCardWidget({
@@ -24,7 +24,7 @@ class NumberCardWidget extends StatelessWidget {
             Container(
               margin: kHPadding5,
               width: _screensize.width / 3.25,
-              height: _screensize.width / 2.5,
+              height: _screensize.width / 2.25,
               decoration: BoxDecoration(
                   borderRadius: kRadius5,
                   image: const DecorationImage(
@@ -42,8 +42,9 @@ class NumberCardWidget extends StatelessWidget {
             strokeColor: kColorWhite,
             child: Text(
               '${index + 1}',
+              textAlign: TextAlign.start,
               style: const TextStyle(
-                fontSize: 90,
+                fontSize: 85,
                 decoration: TextDecoration.none,
                 decorationColor: kColorBlack,
                 fontWeight: FontWeight.bold,

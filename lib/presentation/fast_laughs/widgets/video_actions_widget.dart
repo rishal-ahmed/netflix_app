@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/core/constants.dart';
+import 'package:netflix_app/core/constants/constants.dart';
 
 class VideoActionsWidget extends StatelessWidget {
   const VideoActionsWidget({Key? key, required this.title, required this.icon})
