@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/core/constants/constants.dart';
+import 'package:netflix_app/core/constants/sizes.dart';
 
 import '../../widgets/main_title/main_title.dart';
 import 'number_card_widget.dart';

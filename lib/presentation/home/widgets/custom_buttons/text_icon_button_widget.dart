@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/core/constants/colors/colors.dart';
-import 'package:netflix_app/core/constants/constants.dart';
+import 'package:netflix_app/core/constants/colors.dart';
+import 'package:netflix_app/core/constants/sizes.dart';
 
 class CustomTextIconButton extends StatelessWidget {
   const CustomTextIconButton({

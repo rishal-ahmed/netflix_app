@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:netflix_app/core/constants/constants.dart';
-import 'package:netflix_app/core/constants/text.dart';
+import 'package:netflix_app/core/constants/sizes.dart';
+import 'package:netflix_app/core/constants/texts.dart';
 import 'package:netflix_app/presentation/home/widgets/background_card_widget.dart';
 import 'package:netflix_app/presentation/home/widgets/number_title_card_widget.dart';
 import 'package:netflix_app/presentation/widgets/main_title_card/main_title_card_widget.dart';

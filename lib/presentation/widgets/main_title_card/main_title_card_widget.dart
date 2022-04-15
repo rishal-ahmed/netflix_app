@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants/constants.dart';
+import '../../../core/constants/sizes.dart';
 import '../main_card/main_card_widget.dart';
 import '../main_title/main_title.dart';
 

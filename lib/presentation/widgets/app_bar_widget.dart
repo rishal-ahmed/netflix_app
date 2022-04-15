@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix_app/core/constants/constants.dart';
+import 'package:netflix_app/core/constants/sizes.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({

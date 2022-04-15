@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/presentation/home/widgets/custom_buttons/text_icon_button_widget.dart';
 
-import '../../../core/constants/colors/colors.dart';
-import '../../../core/constants/constants.dart';
+import '../../../core/constants/colors.dart';
+import '../../../core/constants/sizes.dart';
 
 class ComingSoonWidget extends StatelessWidget {
   const ComingSoonWidget({
