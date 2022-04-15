@@ -16,7 +16,7 @@ class MainTitleCardWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        kHeight,
+        kHeight10,
         MainTitle(title: title),
         kHeight5,
         LimitedBox(

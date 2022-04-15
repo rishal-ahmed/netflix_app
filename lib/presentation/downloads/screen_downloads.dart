@@ -18,7 +18,7 @@ class ScreenDownloads extends StatelessWidget {
     return Scaffold(
       appBar: const PreferredSize(
         child: AppBarWidget(title: 'Downloads'),
-        preferredSize: Size.fromHeight(50.0),
+        preferredSize: Size.fromHeight(40.0),
       ),
       body: ListView.separated(
         padding: const EdgeInsets.all(20),
@@ -43,7 +43,7 @@ class _SmartDownloads extends StatelessWidget {
           Icons.settings,
           color: kColorWhite,
         ),
-        kWidth,
+        kWidth10,
         Text('Smart Downloads')
       ],
     );
@@ -73,7 +73,7 @@ class Section2 extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        kHeight,
+        kHeight10,
         const Text(
           "We'll download a personalised selection of\n movies and shows for you, So there's\n always something to watch on your\n device.",
           textAlign: TextAlign.center,
@@ -82,7 +82,7 @@ class Section2 extends StatelessWidget {
             fontSize: 14,
           ),
         ),
-        kHeight,
+        kHeight10,
         SizedBox(
           width: screenSize.width,
           height: screenSize.width,
@@ -144,7 +144,7 @@ class Section3 extends StatelessWidget {
           ),
           color: kButtonBlueAccent,
         ),
-        kHeight,
+        kHeight10,
         MaterialButton(
           onPressed: () {},
           padding: const EdgeInsets.all(10),

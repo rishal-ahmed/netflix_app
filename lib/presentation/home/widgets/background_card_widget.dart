@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/core/constants/colors/colors.dart';
+import 'package:netflix_app/presentation/home/widgets/custom_buttons/text_icon_button_widget.dart';
 
 import '../../../core/constants/constants.dart';
 
@@ -29,18 +30,9 @@ class BackgroundCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                children: const [
-                  Icon(
-                    Icons.add,
-                    color: kColorWhite,
-                    size: 25,
-                  ),
-                  Text(
-                    'My List',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
+              const CustomTextIconButton(
+                icon: Icons.add,
+                text: 'My List',
               ),
               MaterialButton(
                   onPressed: () {},
@@ -56,19 +48,9 @@ class BackgroundCard extends StatelessWidget {
                       Text('Play')
                     ],
                   )),
-              // _playButton(),
-              Column(
-                children: const [
-                  Icon(
-                    Icons.info_outline,
-                    color: kColorWhite,
-                    size: 25,
-                  ),
-                  Text(
-                    'Info',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
+              const CustomTextIconButton(
+                icon: Icons.info_outline,
+                text: 'Info',
               ),
             ],
           ),

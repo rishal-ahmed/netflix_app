@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Netflix',
       theme: ThemeData(
         // fontFamily: GoogleFonts.montserrat().fontFamily,
+        appBarTheme: const AppBarTheme(backgroundColor: kTransparent),
         scaffoldBackgroundColor: backgroundColor,
         backgroundColor: Colors.black,
         primarySwatch: Colors.blue,

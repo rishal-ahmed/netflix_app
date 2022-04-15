@@ -47,7 +47,7 @@ class TopSearchItemTile extends StatelessWidget {
             ),
           ),
         ),
-        kWidth,
+        kWidth10,
         const Expanded(
           child: Text(
             'Stranger Things',

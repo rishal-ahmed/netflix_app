@@ -8,7 +8,7 @@ import 'package:netflix_app/presentation/home/widgets/background_card_widget.dar
 import 'package:netflix_app/presentation/home/widgets/number_title_card_widget.dart';
 import 'package:netflix_app/presentation/widgets/main_title_card/main_title_card_widget.dart';
 
-ValueNotifier<bool> scrollNotifier = ValueNotifier(false);
+ValueNotifier<bool> scrollNotifier = ValueNotifier(true);
 
 class ScreenHome extends StatelessWidget {
   const ScreenHome({Key? key}) : super(key: key);
@@ -95,13 +95,13 @@ class ScreenHome extends StatelessWidget {
                                           color: Colors.white,
                                           size: 25,
                                         ),
-                                        kWidth,
+                                        kWidth10,
                                         Container(
                                           color: Colors.blue,
                                           height: 21,
                                           width: 21,
                                         ),
-                                        kWidth,
+                                        kWidth10,
                                       ],
                                     ),
                                   ),
@@ -127,7 +127,7 @@ class ScreenHome extends StatelessWidget {
                                 ],
                               ),
                             )
-                          : kHeight,
+                          : kHeight10,
                     ],
                   ),
                 );
