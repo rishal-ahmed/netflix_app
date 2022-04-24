@@ -15,12 +15,12 @@ class DownloadsRepository implements IDownloadsRepo {
     try {
       final Response response =
           await Dio(BaseOptions()).get(ApiEndPoints.trending);
-      // log('response == ${response.data}');
+      log('response == ${response.data}');
       if (response.statusCode == 200 || response.statusCode == 201) {
         final downloadsList = (response.data['results'] as List).map((e) {
           return Downloads.fromJson(e);
         }).toList();
-
+        log('Trending == $downloadsList');
         return Right(downloadsList);
       } else {
         return const Left(MainFailures.serverFailure());

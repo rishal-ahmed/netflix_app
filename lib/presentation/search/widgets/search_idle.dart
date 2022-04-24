@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/core/constants/colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix_app/application/search/search_bloc.dart';
 import 'package:netflix_app/core/constants/sizes.dart';
+import 'package:netflix_app/presentation/search/widgets/top_search_items.dart';
 import 'package:netflix_app/presentation/widgets/main_title/main_title.dart';
-
-const imageUrl =
-    'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/rcA17r3hfHtRrk3Xs3hXrgGeSGT.jpg';
 
 class SearchIdleWidget extends StatelessWidget {
   const SearchIdleWidget({Key? key}) : super(key: key);
@@ -17,49 +16,28 @@ class SearchIdleWidget extends StatelessWidget {
         const MainTitle(title: 'Top Searches'),
         kHeight15,
         Expanded(
-          child: ListView.separated(
-              shrinkWrap: true,
-              itemBuilder: (ctx, index) => const TopSearchItemTile(),
-              separatorBuilder: (ctx, index) => kHeight20,
-              itemCount: 10),
-        )
-      ],
-    );
-  }
-}
-
-class TopSearchItemTile extends StatelessWidget {
-  const TopSearchItemTile({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final _screenWidth = MediaQuery.of(context).size.width;
-    return Row(
-      children: [
-        Container(
-          width: _screenWidth * 0.35,
-          height: _screenWidth * 0.17,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            image: const DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(imageUrl),
-            ),
+          child: BlocBuilder<SearchBloc, SearchState>(
+            builder: (context, state) {
+              if (state.isLoading) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (state.isError) {
+                return const Center(child: Text('Error Occured!'));
+              } else if (state.idleList.isEmpty) {
+                return const Center(child: SizedBox());
+              }
+              return ListView.separated(
+                  shrinkWrap: true,
+                  itemBuilder: (ctx, index) {
+                    final movie = state.idleList[index];
+                    return TopSearchItemTile(
+                      title: movie.title ?? 'No Title',
+                      imageUrl: movie.posterPath ?? '',
+                    );
+                  },
+                  separatorBuilder: (ctx, index) => kHeight20,
+                  itemCount: state.idleList.length);
+            },
           ),
-        ),
-        kWidth10,
-        const Expanded(
-          child: Text(
-            'Stranger Things',
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-        ),
-        const Icon(
-          Icons.play_circle_outline,
-          size: 32,
-          color: kColorWhite,
         )
       ],
     );
