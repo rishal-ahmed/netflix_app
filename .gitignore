@@ -50,5 +50,6 @@ app.*.map.json
 lib/infrastructure/api_key.dart
 
 # Freezed and Json Serializable
-*.g.dart 
 *.freezed.dart
+*.g.dart 
+
