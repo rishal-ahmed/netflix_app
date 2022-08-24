@@ -11,13 +11,12 @@ import 'package:netflix_app/domain/search/search_service.dart';
 @LazySingleton(as: SearchService)
 class SearchRepository implements SearchService {
   @override
-  Future<Either<MainFailures, SearchResponse>> searchMovies(
-      {required String movieQuery}) async {
+  Future<Either<MainFailures, SearchResponse>> searchMovies({required String movieQuery}) async {
     try {
-      final Response response =
-          await Dio(BaseOptions()).get(ApiEndPoints.search, queryParameters: {
+      final response = await Dio(BaseOptions()).get(ApiEndPoints.search, queryParameters: {
         'query': movieQuery,
       });
+
       if (response.statusCode == 200 || response.statusCode == 201) {
         final result = SearchResponse.fromJson(response.data);
 

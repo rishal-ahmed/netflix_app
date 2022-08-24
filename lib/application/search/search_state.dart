@@ -7,6 +7,7 @@ class SearchState with _$SearchState {
     required List<Downloads> idleList,
     required bool isLoading,
     required bool isError,
+    required bool isSearching,
   }) = _SearchState;
 
   factory SearchState.initial() => const SearchState(
@@ -14,5 +15,6 @@ class SearchState with _$SearchState {
         idleList: [],
         isLoading: false,
         isError: false,
+        isSearching: false,
       );
 }

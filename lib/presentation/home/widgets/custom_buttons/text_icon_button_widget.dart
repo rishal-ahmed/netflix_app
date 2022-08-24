@@ -22,7 +22,7 @@ class CustomTextIconButton extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: kColorWhite,
+          color: kWhite,
           size: iconSize ?? 25,
         ),
         kHeight5,

@@ -14,7 +14,7 @@ class SmartDownloads extends StatelessWidget {
       children: const [
         Icon(
           Icons.settings,
-          color: kColorWhite,
+          color: kWhite,
         ),
         kWidth10,
         Text('Smart Downloads')

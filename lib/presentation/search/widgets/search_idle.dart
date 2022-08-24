@@ -21,9 +21,9 @@ class SearchIdleWidget extends StatelessWidget {
               if (state.isLoading) {
                 return const Center(child: CircularProgressIndicator());
               } else if (state.isError) {
-                return const Center(child: Text('Error Occured!'));
+                return const Center(child: Text('Something went wrong!'));
               } else if (state.idleList.isEmpty) {
-                return const Center(child: SizedBox());
+                return const Center(child: Text('No results found!'));
               }
               return ListView.separated(
                   shrinkWrap: true,

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-const backgroundColor = Colors.black;
-const kColorWhite = Colors.white;
-const kColorBlack = Colors.black;
-const kButtonBlueAccent = Color.fromRGBO(41, 98, 255, 1);
-const kButtonWhite = Colors.white;
-const kTransparent = Colors.transparent;
-const kColorGrey = Colors.grey;
+//== == == == == Constant Colors == == == == ==
+const Color kWhite = Colors.white;
+const Color kBlack = Colors.black;
+
+// == == == == == Custom Colors == == == == ==
+const Color backgroundColor = Colors.black;
+const Color kButtonBlueAccent = Color(0xFF2962FF);
+const Color kButtonWhite = Colors.white;
+const Color kTransparent = Colors.transparent;
+const Color kColorGrey = Colors.grey;

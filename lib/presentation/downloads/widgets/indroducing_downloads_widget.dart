@@ -12,9 +12,8 @@ class IndroducingDownloads extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
-      BlocProvider.of<DownloadsBloc>(context)
-          .add(const DownloadsEvent.getDownloadsImages());
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<DownloadsBloc>(context).add(const DownloadsEvent.getDownloadsImages());
     });
 
     final screenSize = MediaQuery.of(context).size;
@@ -25,7 +24,7 @@ class IndroducingDownloads extends StatelessWidget {
           'Indroducing Downloads for you',
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: kColorWhite,
+            color: kWhite,
             fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
@@ -57,31 +56,25 @@ class IndroducingDownloads extends StatelessWidget {
                               backgroundColor: Colors.grey.withOpacity(0.3),
                             ),
                             DownloadsImageWidget(
-                              image:
-                                  '$imageAppendUrl${state.downloads[0].posterPath}',
+                              image: '$imageAppendUrl${state.downloads[0].posterPath}',
                               margin: const EdgeInsets.only(
                                 right: 140,
                               ),
                               angle: -17,
-                              size: Size(screenSize.width * 0.3,
-                                  screenSize.width * 0.38),
+                              size: Size(screenSize.width * 0.3, screenSize.width * 0.38),
                             ),
                             DownloadsImageWidget(
-                              image:
-                                  '$imageAppendUrl${state.downloads[1].posterPath}',
+                              image: '$imageAppendUrl${state.downloads[1].posterPath}',
                               margin: const EdgeInsets.only(
                                 left: 140,
                               ),
                               angle: 17,
-                              size: Size(screenSize.width * 0.3,
-                                  screenSize.width * 0.38),
+                              size: Size(screenSize.width * 0.3, screenSize.width * 0.38),
                             ),
                             DownloadsImageWidget(
-                              image:
-                                  '$imageAppendUrl${state.downloads[2].posterPath}',
+                              image: '$imageAppendUrl${state.downloads[2].posterPath}',
                               margin: const EdgeInsets.only(top: 20),
-                              size: Size(screenSize.width * 0.3,
-                                  screenSize.width * 0.42),
+                              size: Size(screenSize.width * 0.3, screenSize.width * 0.42),
                             ),
                           ],
                         ),

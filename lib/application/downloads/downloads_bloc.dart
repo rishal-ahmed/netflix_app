@@ -9,19 +9,22 @@ import 'package:netflix_app/domain/downloads/i_downloads_repo.dart';
 
 import '../../domain/downloads/models/downloads.dart';
 
+part 'downloads_bloc.freezed.dart';
 part 'downloads_event.dart';
 part 'downloads_state.dart';
-part 'downloads_bloc.freezed.dart';
 
 @injectable
 class DownloadsBloc extends Bloc<DownloadsEvent, DownloadsState> {
   final IDownloadsRepo _downloadsRepo;
   DownloadsBloc(this._downloadsRepo) : super(DownloadsState.initial()) {
     on<_GetDownloadsImages>((event, emit) async {
+      // get downloads
       if (state.downloads.isNotEmpty) {
         state.copyWith(isLoading: false, downloads: state.downloads);
         return;
       }
+
+      log('Fetching Downloads from the server..', name: 'DownloadsBloc');
 
       emit(
         state.copyWith(
@@ -30,12 +33,10 @@ class DownloadsBloc extends Bloc<DownloadsEvent, DownloadsState> {
         ),
       );
 
-      final Either<MainFailures, List<Downloads>> downloadsOption =
-          await _downloadsRepo.getDownloadsImages();
+      final Either<MainFailures, List<Downloads>> downloadsOption = await _downloadsRepo.getDownloadsImages();
 
       emit(downloadsOption.fold((failure) {
-        return state.copyWith(
-            isLoading: false, downloadsFailureOrSuccess: Some(Left(failure)));
+        return state.copyWith(isLoading: false, downloadsFailureOrSuccess: Some(Left(failure)));
       }, (success) {
         return state.copyWith(
           isLoading: false,

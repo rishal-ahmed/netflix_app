@@ -20,14 +20,14 @@ class ScreenNewAndHot extends StatelessWidget {
             bottom: TabBar(
               indicatorWeight: 0,
               isScrollable: true,
-              unselectedLabelColor: kColorWhite,
-              labelColor: kColorBlack,
+              unselectedLabelColor: kWhite,
+              labelColor: kBlack,
               labelStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
               indicator: BoxDecoration(
-                color: kColorWhite,
+                color: kWhite,
                 borderRadius: kRadius30,
               ),
               tabs: const [

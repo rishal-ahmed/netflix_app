@@ -20,7 +20,7 @@ class DownloadsButtons extends StatelessWidget {
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: kColorWhite,
+              color: kWhite,
             ),
           ),
           color: kButtonBlueAccent,
@@ -35,10 +35,10 @@ class DownloadsButtons extends StatelessWidget {
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: kColorBlack,
+              color: kBlack,
             ),
           ),
-          color: kColorWhite,
+          color: kWhite,
         ),
       ],
     );

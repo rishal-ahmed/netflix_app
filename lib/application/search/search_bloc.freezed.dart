@@ -335,12 +335,14 @@ class _$SearchStateTearOff {
       {required List<SearchResultData> searchResultList,
       required List<Downloads> idleList,
       required bool isLoading,
-      required bool isError}) {
+      required bool isError,
+      required bool isSearching}) {
     return _SearchState(
       searchResultList: searchResultList,
       idleList: idleList,
       isLoading: isLoading,
       isError: isError,
+      isSearching: isSearching,
     );
   }
 }
@@ -355,6 +357,7 @@ mixin _$SearchState {
   List<Downloads> get idleList => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
+  bool get isSearching => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SearchStateCopyWith<SearchState> get copyWith =>
@@ -370,7 +373,8 @@ abstract class $SearchStateCopyWith<$Res> {
       {List<SearchResultData> searchResultList,
       List<Downloads> idleList,
       bool isLoading,
-      bool isError});
+      bool isError,
+      bool isSearching});
 }
 
 /// @nodoc
@@ -387,6 +391,7 @@ class _$SearchStateCopyWithImpl<$Res> implements $SearchStateCopyWith<$Res> {
     Object? idleList = freezed,
     Object? isLoading = freezed,
     Object? isError = freezed,
+    Object? isSearching = freezed,
   }) {
     return _then(_value.copyWith(
       searchResultList: searchResultList == freezed
@@ -405,6 +410,10 @@ class _$SearchStateCopyWithImpl<$Res> implements $SearchStateCopyWith<$Res> {
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
+      isSearching: isSearching == freezed
+          ? _value.isSearching
+          : isSearching // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -420,7 +429,8 @@ abstract class _$SearchStateCopyWith<$Res>
       {List<SearchResultData> searchResultList,
       List<Downloads> idleList,
       bool isLoading,
-      bool isError});
+      bool isError,
+      bool isSearching});
 }
 
 /// @nodoc
@@ -439,6 +449,7 @@ class __$SearchStateCopyWithImpl<$Res> extends _$SearchStateCopyWithImpl<$Res>
     Object? idleList = freezed,
     Object? isLoading = freezed,
     Object? isError = freezed,
+    Object? isSearching = freezed,
   }) {
     return _then(_SearchState(
       searchResultList: searchResultList == freezed
@@ -457,6 +468,10 @@ class __$SearchStateCopyWithImpl<$Res> extends _$SearchStateCopyWithImpl<$Res>
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
+      isSearching: isSearching == freezed
+          ? _value.isSearching
+          : isSearching // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -468,7 +483,8 @@ class _$_SearchState implements _SearchState {
       {required this.searchResultList,
       required this.idleList,
       required this.isLoading,
-      required this.isError});
+      required this.isError,
+      required this.isSearching});
 
   @override
   final List<SearchResultData> searchResultList;
@@ -478,10 +494,12 @@ class _$_SearchState implements _SearchState {
   final bool isLoading;
   @override
   final bool isError;
+  @override
+  final bool isSearching;
 
   @override
   String toString() {
-    return 'SearchState(searchResultList: $searchResultList, idleList: $idleList, isLoading: $isLoading, isError: $isError)';
+    return 'SearchState(searchResultList: $searchResultList, idleList: $idleList, isLoading: $isLoading, isError: $isError, isSearching: $isSearching)';
   }
 
   @override
@@ -493,7 +511,9 @@ class _$_SearchState implements _SearchState {
                 .equals(other.searchResultList, searchResultList) &&
             const DeepCollectionEquality().equals(other.idleList, idleList) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isError, isError));
+            const DeepCollectionEquality().equals(other.isError, isError) &&
+            const DeepCollectionEquality()
+                .equals(other.isSearching, isSearching));
   }
 
   @override
@@ -502,7 +522,8 @@ class _$_SearchState implements _SearchState {
       const DeepCollectionEquality().hash(searchResultList),
       const DeepCollectionEquality().hash(idleList),
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isError));
+      const DeepCollectionEquality().hash(isError),
+      const DeepCollectionEquality().hash(isSearching));
 
   @JsonKey(ignore: true)
   @override
@@ -515,7 +536,8 @@ abstract class _SearchState implements SearchState {
       {required List<SearchResultData> searchResultList,
       required List<Downloads> idleList,
       required bool isLoading,
-      required bool isError}) = _$_SearchState;
+      required bool isError,
+      required bool isSearching}) = _$_SearchState;
 
   @override
   List<SearchResultData> get searchResultList;
@@ -525,6 +547,8 @@ abstract class _SearchState implements SearchState {
   bool get isLoading;
   @override
   bool get isError;
+  @override
+  bool get isSearching;
   @override
   @JsonKey(ignore: true)
   _$SearchStateCopyWith<_SearchState> get copyWith =>

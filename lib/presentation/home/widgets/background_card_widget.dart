@@ -36,7 +36,7 @@ class BackgroundCard extends StatelessWidget {
               ),
               MaterialButton(
                   onPressed: () {},
-                  color: kColorWhite,
+                  color: kWhite,
                   height: 30,
                   child: Row(
                     children: const [

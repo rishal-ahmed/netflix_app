@@ -12,6 +12,5 @@ class Downloads with _$Downloads {
     @JsonKey(name: 'title') required String? title,
   }) = _Downloads;
 
-  factory Downloads.fromJson(Map<String, dynamic> json) =>
-      _$DownloadsFromJson(json);
+  factory Downloads.fromJson(Map<String, dynamic> json) => _$DownloadsFromJson(json);
 }

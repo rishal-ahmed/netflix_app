@@ -6,9 +6,7 @@ import 'package:netflix_app/core/constants/sizes.dart';
 class TopSearchItemTile extends StatelessWidget {
   final String title;
   final String imageUrl;
-  const TopSearchItemTile(
-      {required this.title, required this.imageUrl, Key? key})
-      : super(key: key);
+  const TopSearchItemTile({required this.title, required this.imageUrl, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +36,7 @@ class TopSearchItemTile extends StatelessWidget {
         const Icon(
           Icons.play_circle_outline,
           size: 32,
-          color: kColorWhite,
+          color: kWhite,
         )
       ],
     );
