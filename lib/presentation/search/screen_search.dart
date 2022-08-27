@@ -31,7 +31,10 @@ class ScreenSearch extends StatelessWidget {
                 suffixIcon: const Icon(CupertinoIcons.xmark_circle_fill, color: Colors.grey),
                 style: const TextStyle(color: Colors.white),
                 onChanged: (query) {
-                  if (query.isEmpty) return BlocProvider.of<SearchBloc>(context).add(const Initialize());
+                  if (query.isEmpty || query.startsWith(' ')) {
+                    Debouncer.timer?.cancel();
+                    return BlocProvider.of<SearchBloc>(context).add(const Initialize());
+                  }
 
                   final Debouncer debouncer = Debouncer();
                   debouncer.run(() {

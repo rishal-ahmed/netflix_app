@@ -3,12 +3,12 @@ import 'dart:async';
 
 class Debouncer {
   final int milliseconds;
-  static Timer? _timer;
+  static Timer? timer;
 
   Debouncer({this.milliseconds = 500});
 
   run(VoidCallback action) {
-    _timer?.cancel();
-    _timer = Timer(Duration(milliseconds: milliseconds), action);
+    timer?.cancel();
+    timer = Timer(Duration(milliseconds: milliseconds), action);
   }
 }

@@ -51,5 +51,7 @@ lib/infrastructure/api_key.dart
 
 # Freezed and Json Serializable
 *.freezed.dart
+*.config.dart
 *.g.dart 
+
 
