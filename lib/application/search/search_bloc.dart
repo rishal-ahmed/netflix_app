@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:netflix_app/domain/core/failures/main_failures.dart';
-import 'package:netflix_app/domain/downloads/i_downloads_repo.dart';
+import 'package:netflix_app/domain/downloads/downloads_service.dart';
 import 'package:netflix_app/domain/downloads/models/downloads.dart';
 import 'package:netflix_app/domain/search/models/search_response/search_response.dart';
 import 'package:netflix_app/domain/search/search_service.dart';
@@ -16,13 +16,13 @@ part 'search_bloc.freezed.dart';
 
 @injectable
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
-  final IDownloadsRepo _downloadsService;
+  final DownloadsService _downloadsService;
   final SearchService _searchService;
   SearchBloc(this._downloadsService, this._searchService) : super(SearchState.initial()) {
 /*
 idle state
 */
-    on<Initialize>((event, emit) async {
+    on<_Initialize>((event, emit) async {
       // get trending
       if (state.idleList.isNotEmpty) {
         emit(SearchState.initial().copyWith(idleList: state.idleList, isSearching: false));

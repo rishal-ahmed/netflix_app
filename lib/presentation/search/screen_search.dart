@@ -13,7 +13,7 @@ class ScreenSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      BlocProvider.of<SearchBloc>(context).add(const Initialize());
+      BlocProvider.of<SearchBloc>(context).add(const SearchEvent.initialize());
     });
 
     return Scaffold(
@@ -33,7 +33,7 @@ class ScreenSearch extends StatelessWidget {
                 onChanged: (query) {
                   if (query.isEmpty || query.startsWith(' ')) {
                     Debouncer.timer?.cancel();
-                    return BlocProvider.of<SearchBloc>(context).add(const Initialize());
+                    return BlocProvider.of<SearchBloc>(context).add(const SearchEvent.initialize());
                   }
 
                   final Debouncer debouncer = Debouncer();
