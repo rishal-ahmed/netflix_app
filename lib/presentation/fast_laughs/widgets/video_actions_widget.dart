@@ -9,23 +9,19 @@ class VideoActionsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _screenSize = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: _screenSize.width * 0.01,
-      ),
+      padding: const EdgeInsets.symmetric(vertical: 5),
       child: Column(
         children: [
           Icon(
             icon,
             color: Colors.white,
-            size: _screenSize.width * 0.09,
+            size: 35,
           ),
           kHeight5,
           Text(
             title,
-            style: TextStyle(
-                color: Colors.white, fontSize: _screenSize.width * 0.035),
+            style: const TextStyle(color: Colors.white, fontSize: 14),
           ),
         ],
       ),

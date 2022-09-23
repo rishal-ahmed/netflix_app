@@ -1,34 +1,29 @@
-import 'package:flutter/material.dart';
-import 'package:netflix_app/presentation/fast_laughs/widgets/video_actions_widget.dart';
+import 'dart:developer';
+import 'dart:math' as math;
 
-const listPage = [
-  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/sqLowacltbZLoCa4KYye64RvvdQ.jpg',
-  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/74xTEgt7R36Fpooo50r9T25onhq.jpg',
-  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/wFjboE0aFZNbVOF05fzrka9Fqyx.jpg',
-  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1KHoDh6NW8SWOJu8JnFe6wWaMD3.jpg',
-  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ko1JVbGj4bT8IhCWqjBQ6ZtF2t.jpg',
-  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/odVv1sqVs0KxBXiA8bhIBlPgalx.jpg',
-  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/zHQy4h36WwuCetKS7C3wcT1hkgA.jpg',
-  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kZNHR1upJKF3eTzdgl5V8s8a4C3.jpg',
-  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
-  'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/5cnLoWq9o5tuLe1Zq4BTX4LwZ2B.jpg',
-];
+import 'package:flutter/material.dart';
+import 'package:netflix_app/core/constants/base_url.dart';
+import 'package:netflix_app/domain/core/fast_laught/reels.dart';
+import 'package:netflix_app/presentation/fast_laughs/widgets/fast_laugh_video_player.dart';
+import 'package:netflix_app/presentation/fast_laughs/widgets/video_actions_widget.dart';
+import 'package:netflix_app/presentation/fast_laughs/widgets/video_list_item_inherited_widget.dart';
+import 'package:share_plus/share_plus.dart';
 
 class VideoListItem extends StatelessWidget {
-  const VideoListItem({Key? key, required this.index}) : super(key: key);
-  final int index;
+  const VideoListItem({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final _screenSize = MediaQuery.of(context).size;
+    final _posterImage =
+        VideoListItemInheritedWidget.of(context)?.movieData.posterImageUrl;
+    final String _videoUrl =
+        videoAppendUrl + reels[math.Random().nextInt(reels.length)];
     return Stack(
       children: [
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(listPage[index]),
-            ),
-          ),
+        FastLaughVideoPlayer(
+          videoUrl: _videoUrl,
+          onStateChanged: (_) {},
         ),
         Align(
           alignment: Alignment.bottomCenter,
@@ -64,16 +59,49 @@ class VideoListItem extends StatelessWidget {
                       child: CircleAvatar(
                         radius: _screenSize.width * 0.07,
                         backgroundColor: Colors.black,
-                        backgroundImage: NetworkImage(listPage[index]),
+                        backgroundImage: _posterImage == null
+                            ? null
+                            : NetworkImage(_posterImage),
                       ),
                     ),
+
+                    // ========== LOL ==========
                     const VideoActionsWidget(
-                        title: 'LOL', icon: Icons.emoji_emotions_outlined),
+                      title: 'LOL',
+                      icon: Icons.emoji_emotions_outlined,
+                    ),
+
+                    // ========== My List ==========
                     const VideoActionsWidget(
-                        title: 'My List', icon: Icons.add_outlined),
-                    const VideoActionsWidget(title: 'Share', icon: Icons.share),
+                      title: 'My List',
+                      icon: Icons.add_outlined,
+                    ),
+
+                    // ========== Share ==========
+                    InkWell(
+                      onTap: () {
+                        log('usl $_videoUrl');
+                        final String _title = _videoUrl
+                            .replaceAll(videoAppendUrl, '')
+                            .replaceAll('.', '')
+                            .replaceAll('-', '')
+                            .replaceAll('mp4', '')
+                            .replaceAll('mkv', '');
+                        log(_title, name: 'title');
+                        Share.share(
+                            'Movie: $_title \nUrl: ${_videoUrl.replaceAll(' ', '%20')}');
+                      },
+                      child: const VideoActionsWidget(
+                        title: 'Share',
+                        icon: Icons.near_me,
+                      ),
+                    ),
+
+                    // ========== Play ==========
                     const VideoActionsWidget(
-                        title: 'Play', icon: Icons.play_arrow)
+                      title: 'Play',
+                      icon: Icons.play_arrow,
+                    )
                   ],
                 )
               ],
