@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_app/application/fast_laugh/fast_laugh_bloc.dart';
@@ -12,6 +10,9 @@ class ScreenFastLaughs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> _reels = List.from(reels);
+    _reels.shuffle();
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       BlocProvider.of<FastLaughBloc>(context)
           .add(const FastLaughEvent.initialize());
@@ -31,11 +32,10 @@ class ScreenFastLaughs extends StatelessWidget {
               return PageView(
                 scrollDirection: Axis.vertical,
                 children: List.generate(
-                  reels.length,
+                  _reels.length,
                   (index) => VideoListItemInheritedWidget(
-                    widget: const VideoListItem(),
-                    movieData: state.videosList![
-                        Random().nextInt(state.videosList!.length)],
+                    widget: VideoListItem(videoId: _reels[index]),
+                    movieDatas: state.videosList!,
                     key: Key('$index'),
                   ),
                 ),

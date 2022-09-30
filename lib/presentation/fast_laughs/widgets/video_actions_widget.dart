@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:netflix_app/core/constants/sizes.dart';
 
 class VideoActionsWidget extends StatelessWidget {
-  const VideoActionsWidget({Key? key, required this.title, required this.icon})
+  const VideoActionsWidget(
+      {Key? key, required this.title, required this.icon, this.color})
       : super(key: key);
   final String title;
   final IconData icon;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class VideoActionsWidget extends StatelessWidget {
         children: [
           Icon(
             icon,
-            color: Colors.white,
+            color: color ?? Colors.white,
             size: 35,
           ),
           kHeight5,

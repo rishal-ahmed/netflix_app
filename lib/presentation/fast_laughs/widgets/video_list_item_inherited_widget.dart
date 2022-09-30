@@ -5,15 +5,15 @@ class VideoListItemInheritedWidget extends InheritedWidget {
   const VideoListItemInheritedWidget({
     Key? key,
     required this.widget,
-    required this.movieData,
+    required this.movieDatas,
   }) : super(key: key, child: widget);
 
   final Widget widget;
-  final Downloads movieData;
+  final List<Downloads> movieDatas;
 
   @override
   bool updateShouldNotify(covariant VideoListItemInheritedWidget oldWidget) {
-    return oldWidget.movieData != movieData;
+    return oldWidget.movieDatas != movieDatas;
   }
 
   static VideoListItemInheritedWidget? of(BuildContext context) {
